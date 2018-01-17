@@ -1,0 +1,184 @@
+.button_box2 {
+    margin:100px auto;
+}
+/*-------------------------------------*/
+.cf:before, .cf:after{
+    content:"";
+    display:table;
+}
+.cf:after{
+    clear:both;
+}
+.cf{
+    zoom:1;
+}
+/*-------------------------------------*/
+
+.form-wrapper-2 {
+    width: 350px;
+    padding: 8px;
+    background: #555;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -moz-box-shadow: 0 1px 1px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.2);
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.2);
+    box-shadow: 0 1px 1px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.2);
+}
+.form-wrapper-2 input {
+    width: 224px;
+    height: 40px;
+    padding: 10px 5px;
+    float: left;
+    font: bold 15px 'Raleway', sans-serif;
+    border: 0;
+    background: #eee;
+    -moz-border-radius: 3px 0 0 3px;
+    -webkit-border-radius: 3px 0 0 3px;
+    border-radius: 3px 0 0 3px;
+}
+.form-wrapper-2 input:focus {
+    outline: 0;
+    background: #fff;
+    -moz-box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+    -webkit-box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+    box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+}
+.form-wrapper-2 input::-webkit-input-placeholder {
+    color: #999;
+    font-weight: normal;
+    font-style: italic;
+}
+.form-wrapper-2 input:-moz-placeholder {
+    color: #999;
+    font-weight: normal;
+    font-style: italic;
+}
+.form-wrapper-2 input:-ms-input-placeholder {
+    color: #999;
+    font-weight: normal;
+    font-style: italic;
+}
+.form-wrapper-2 button {
+    overflow: visible;
+    position: relative;
+    float: right;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    height: 40px;
+    width: 110px;
+    font: bold 15px/40px 'Raleway', sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+    background: #D88F3C;
+    -moz-border-radius: 0 3px 3px 0;
+    -webkit-border-radius: 0 3px 3px 0;
+    border-radius: 0 3px 3px 0;
+    text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
+}
+.form-wrapper-2 button:hover{
+    background: #FA8807;
+}
+.form-wrapper-2 button:active,
+.form-wrapper-2 button:focus{
+    background: #c42f2f;
+}
+.form-wrapper-2 button:before {
+    content: '';
+    position: absolute;
+    border-width: 8px 8px 8px 0;
+    border-style: solid solid solid none;
+    border-color: transparent #D88F3C transparent;
+    top: 12px;
+    left: -6px;
+}
+.form-wrapper-2 button:hover:before{
+    border-right-color: #FA8807;
+}
+.form-wrapper-2 button:focus:before{
+    border-right-color: #c42f2f;
+}
+.form-wrapper-2 button::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+
+table.searchPromos {
+    margin: 20px 0 0 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+    background: rgb(142, 193, 208);
+    font-family: serif;
+}
+
+table.searchPromos th, table.searchPromos td {
+    text-align: center;
+}
+
+table.searchPromos thead {
+    line-height: 12px;
+    background: #58828e;
+}
+
+table.searchPromos thead th {
+    color: #fff;
+    padding: 10px;
+    letter-spacing: 1px;
+    vertical-align: bottom;
+}
+
+table.searchPromos thead th:nth-child(1) {
+    width: 20%;
+    text-align: center;
+    padding-left: 20px;
+}
+
+table.searchPromos thead th:nth-child(2) {
+    width: 40%;
+}
+
+table.searchPromos thead th:nth-child(3) {
+    width: 20%;
+}
+
+table.searchPromos thead th:nth-child(4) {
+    width: 20%;
+}
+
+table.searchPromos tbody {
+    font-size: 1em;
+    line-height: 15px;
+}
+
+table.searchPromos tbody tr {
+    border-top: 2px solid rgba(109, 176, 231, 0.8);
+    transition: background 0.6s, color 0.6s;
+}
+
+table.searchPromos tbody tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+table.searchPromos tbody tr:hover {
+    color: #000;
+    background: rgba(255, 255, 255, 0.7);
+    font-weight: 900;
+}
+
+table.searchPromos tbody td {
+    padding: 12px;
+}
+
+table.searchPromos tbody tr:hover td:first-child {
+    background: rgba(0,0,0,0);
+}
+
+table.searchPromos tbody td:first-child {
+    text-align: center;
+    padding-left: 20px;
+    font-weight: 700;
+    background: rgba(109, 176, 231, 0.35);
+    transition: backgrounf 0.6s;
+}
