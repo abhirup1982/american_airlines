@@ -1,27 +1,29 @@
 package com.aa.promos.controller;
 
-import com.aa.promos.models.SearchResults;
-import com.fasterxml.jackson.databind.JavaType;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.aa.promos.models.PromoSearchRsp;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 
 @Controller
 public class SearchController {
+
+    @Autowired
+    private RestTemplate restTemplate;
+
+    @Value("${promo.details.url}")
+    private String promo_result_url;
+
 
     @RequestMapping("/")
     public String home() {
         return "home";
     }
-
-    @Value("${promo.details.url}")
-    private String promo_result_url;
 
 /*    @RequestMapping("/search")
     public ModelAndView search(String searchPromo) throws IOException {
@@ -37,32 +39,16 @@ public class SearchController {
     }*/
 
     @RequestMapping("/search")
-    public void search(HttpServletResponse rsp, String searchPromo) throws IOException {
-        rsp.sendRedirect(promo_result_url + "/promoDetails?promoCode=" + searchPromo);
-    }
+    public ModelAndView search(String searchPromo) throws IOException {
 
-    private String sampleResponse(String searchPromo) {
-        return
-                "[{\n" +
-                        "\t\"promoCode\":\""+searchPromo+"1\",\n" +
-                        "\t\"promoName\":\"Promo-ABCD\",\n" +
-                        "\t\"promoStartDt\":\"01/12/2017\",\n" +
-                        "\t\"promoEndDt\":\"\"\n" +
-                        "},{\n" +
-                        "\t\"promoCode\":\""+searchPromo+"2\",\n" +
-                        "\t\"promoName\":\"Promo-XYZ\",\n" +
-                        "\t\"promoStartDt\":\"01/12/2017\",\n" +
-                        "\t\"promoEndDt\":\"\"\n" +
-                        "},{\n" +
-                        "\t\"promoCode\":\""+searchPromo+"3\",\n" +
-                        "\t\"promoName\":\"Promo-ABC\",\n" +
-                        "\t\"promoStartDt\":\"01/12/2017\",\n" +
-                        "\t\"promoEndDt\":\"\"\n" +
-                        "},{\n" +
-                        "\t\"promoCode\":\""+searchPromo+"4\",\n" +
-                        "\t\"promoName\":\"Promo-AB\",\n" +
-                        "\t\"promoStartDt\":\"01/12/2017\",\n" +
-                        "\t\"promoEndDt\":\"01/12/2018\"\n" +
-                        "}]";
+        PromoSearchRsp promoSearchRsp = restTemplate.getForObject(promo_result_url + "/details?promoCode=" + searchPromo, PromoSearchRsp.class);
+        if(promoSearchRsp.getContent().getPromotionOrChallengeCode().length() == 0) {
+            ModelAndView view = new ModelAndView("home");
+            view.addObject("error", "error");
+            return view;
+        }
+        ModelAndView view = new ModelAndView("details");
+        view.addObject("promoDetails", promoSearchRsp);
+        return view;
     }
 }

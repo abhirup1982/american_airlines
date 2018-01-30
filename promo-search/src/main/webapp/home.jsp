@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <script src="${contextPath}/resources/js/jquery-1.12.4.js"></script>
@@ -34,6 +35,9 @@
                 <div class="button_box2" style="margin: 12%">
                     <span style="float: left;font-size: 25px;color: white;font-family: georgia;">Promotion Name</span>
                     <form:form id="searchForm" class="form-wrapper-2 cf" style="float: right" method="POST" action="/search">
+                        <c:if test="${error != null}">
+                            <label for="searchPromo" style="color: red;font-size: small;letter-spacing: 1px;">PromotionCode  not  found !!!!</label>
+                        </c:if>
                         <input type="text" name="searchPromo" id="searchPromo" placeholder="Search here..." />
                         <button type="button" id="search">Search</button>
                     </form:form>
