@@ -30,24 +30,61 @@
                     </div>
                 </div>
                 <div class="row" style="padding: 3%; line-height: 25px; color: white;font-family: monospace;">
-                    Promo Code - ${promoDetails.LSCS.promoCode}
-                    <br>
-                    Reward Type - ${promoDetails.LSCS.rewardType}
-                    <br>
-                    Reward Format - ${promoDetails.LSCS.rewardFormat}
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                Promo Code
+                            </div>
+                            <div class="col-sm-8">
+                              ${promoDetails.content.promotionOrChallengeCode}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                Promotion Type
+                            </div>
+                            <div class="col-sm-8">
+                                ${promoDetails.content.promotionType}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                Promotion Name
+                            </div>
+                            <div class="col-sm-8">
+                                ${promoDetails.content.promotionName}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                Promotion Description
+                            </div>
+                            <div class="col-sm-8">
+                                ${promoDetails.content.description}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                Rules Restriction
+                            </div>
+                            <div class="col-sm-8">
+                                ${promoDetails.content.rulesRestrictions.get(0).rules}
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="row" style="background-color: brown;text-align: center;font-size: larger;color: white;font-family: monospace;">
+                <%--<div class="row" style="background-color: brown;text-align: center;font-size: larger;color: white;font-family: monospace;">
                     <div class="col-sm-12">
                         Ventana
                     </div>
                 </div>
                 <div class="row" style="padding: 3%; line-height: 25px; color: white;font-family: monospace;">
-                    Promo Code - ${promoDetails.ventana.promoCode}
+                    Promo Code -
                     <br>
-                    Tracker Type - ${promoDetails.ventana.trackerType}
+                    Tracker Type -
                     <br>
-                    Goal - ${promoDetails.ventana.goal}
-                </div>
+                    Goal -
+                </div>--%>
             </div>
         </div>
     </div>
