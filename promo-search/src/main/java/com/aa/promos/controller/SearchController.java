@@ -39,9 +39,8 @@ public class SearchController {
     }*/
 
     @RequestMapping("/search")
-    public ModelAndView search(String searchPromo) throws IOException {
-
-        PromoSearchRsp promoSearchRsp = restTemplate.getForObject(promo_result_url + "/details?promoCode=" + searchPromo, PromoSearchRsp.class);
+    public ModelAndView search(String promoCode, String promoName, String promoDesc, String promoStartDt, String promoEndDt) throws IOException {
+        PromoSearchRsp promoSearchRsp = restTemplate.getForObject(promo_result_url + "/details?promoCode=" + promoCode, PromoSearchRsp.class);
         if(promoSearchRsp.getContent().getPromotionOrChallengeCode().length() == 0) {
             ModelAndView view = new ModelAndView("home");
             view.addObject("error", "error");

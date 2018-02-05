@@ -1,3 +1,7 @@
+body {
+    font-family: georgia;
+}
+
 .button_box2 {
     margin:100px auto;
 }
@@ -181,4 +185,29 @@ table.searchPromos tbody td:first-child {
     font-weight: 700;
     background: rgba(109, 176, 231, 0.35);
     transition: backgrounf 0.6s;
+}
+
+.button6{
+    width:250px;
+    height:45px;
+    border:none;
+    outline:none;
+    box-shadow: -10px 10px 6px 0 #8aa7fb;
+    margin-top:20px;
+    color:#fff;
+    font-size:14px;
+    text-shadow:0 1px rgba(0,0,0,0.4);
+    background-color:#5882FA;
+    border-radius:3px;
+    font-weight:700
+}
+.button6:hover{
+    background-color:#2E64FE;
+    cursor:pointer
+}
+.button6:active{
+    margin-left:-5px;
+    margin-bottom:-5px;
+    padding-top:2px;
+    box-shadow:none
 }
